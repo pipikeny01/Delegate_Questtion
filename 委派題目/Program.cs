@@ -10,6 +10,16 @@ namespace 委派題目
     {
         static void Main(string[] args)
         {
-        }
+
+            var question = new Question1();
+            question.Run();
+        } 
+
     }
+    public class Person
+    {
+        public int Age { get; set; }
+        public string Name { get; set; }
+    }
+
 }
