@@ -20,7 +20,10 @@ namespace 委派題目
                 new Male { Age=42,Name = "俗仔" },
             };
 
-            var result = CheckAge(people, (age) => { return age > 50; } );
+            var result = CheckAge(people, (age) =>
+            {
+                return age > 50;
+            });
 
             foreach (var person in result)
             {
@@ -29,7 +32,10 @@ namespace 委派題目
 
             Console.ReadKey();
 
+
         }
+
+
 
         IEnumerable<Male> CheckAge(List<Male> people ,Func<int,bool> eachPerson = null)
         {

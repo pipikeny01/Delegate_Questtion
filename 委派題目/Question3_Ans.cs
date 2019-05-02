@@ -31,17 +31,18 @@ namespace 委派題目
                 new Female { Age=42,Name = "如花" },
             };
 
-            var result = CheckAge(male);
+            var result = CheckAge<Male>(male);
+            var result2 = CheckAge<Female>(femail);
 
             foreach (var person in result)
             {
                 Console.WriteLine($"{person.Name}:{person.Age}");
             }
-
+            
             Console.ReadKey();
         }
 
-        private IEnumerable<T> CheckAge<T>(List<T> people, Func<int, bool> eachPerson = null) where T : Person
+        private IEnumerable<T1> CheckAge<T1>(List<T1> people, Func<int, bool> eachPerson = null) where T1 : Person
         {
             foreach (var person in people)
             {
